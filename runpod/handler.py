@@ -1,9 +1,6 @@
 import runpod
 
 def handler(job):
-    # Whatever the user sends:
-    # {"input": {"ping": "pong"}}
-    data = job.get("input", {})
-    return {"received": data}
+    return {"received": job.get("input")}
 
 runpod.serverless.start({"handler": handler})
